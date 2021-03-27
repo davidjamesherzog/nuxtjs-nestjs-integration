@@ -26,12 +26,15 @@
     "types": [
       "@nuxt/types",
       "@nuxtjs/axios",
-      "@types/node"
+      "@types/node",
+      "@types/jest",
+      "@types/supertest"
     ]
   },
   "exclude": [
     "node_modules",
     ".nuxt",
-    "dist"
+    ".nest",
+    "server"
   ]
 }
