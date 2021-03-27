@@ -1,4 +1,9 @@
 {
+  "globals": {
+    "ts-jest": {
+      "tsConfig": "tsconfig-server.json"
+    }
+  },
   "moduleFileExtensions": ["js", "json", "ts"],
   "rootDir": ".",
   "testEnvironment": "node",
