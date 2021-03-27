@@ -1,6 +1,6 @@
 export default {
   srcDir: 'client/',
-  
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'nuxtjs-nestjs-integration',
