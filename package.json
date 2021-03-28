@@ -4,14 +4,15 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "dev:api": "nest start --debug --watch",
+    "dev:server": "nest start --debug --watch",
     "build": "nest build && nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "lint": "npm run lint:js",
-    "test": "jest",
-    "test:api": "jest --config ./jest-server.config.js",
+    "test": "npm run test:client && npm run test:server && npm run test:e2e",
+    "test:client": "jest",
+    "test:server": "jest --config ./jest-server.config.js",
     "test:e2e": "jest --config ./server/test/jest-e2e.json"
   },
   "dependencies": {
