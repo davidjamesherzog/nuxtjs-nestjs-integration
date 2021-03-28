@@ -1,4 +1,8 @@
-export default {
+import bootstrap from './.nest/nest.js';
+
+const isDev = process.env.NODE_ENV === 'development';
+
+const config = async () => ({
   srcDir: 'client/',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -14,6 +18,8 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
+
+  serverMiddleware: isDev ? [] : [{ path: '/api', handler: await bootstrap() }],
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
@@ -37,8 +43,12 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL: isDev ? 'http://localhost:4000/api' : 'http://localhost:3000/api'
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {}
-};
+});
+
+export default config;

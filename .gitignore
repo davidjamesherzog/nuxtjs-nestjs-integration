@@ -70,6 +70,9 @@ typings/
 # nuxt.js build output
 .nuxt
 
+# nest.js build output
+.nest
+
 # Nuxt generate
 dist
 
